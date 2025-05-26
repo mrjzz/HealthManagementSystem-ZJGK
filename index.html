@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>用户管理</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .sidebar {
+      width: 250px;
+      transition: width 0.3s ease;
+    }
+    .sidebar-collapsed {
+      width: 80px;
+    }
+    .sidebar-item .material-icons {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex">
+<aside class="sidebar bg-slate-800 text-gray-300 min-h-screen p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<h1 class="text-xl font-semibold text-white">健康管理平台</h1>
+<button class="text-gray-300 hover:text-white focus:outline-none md:hidden" id="toggleSidebar">
+<span class="material-icons">menu</span>
+</button>
+</div>
+<nav>
+<ul>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">home</span>
+<span class="sidebar-text">主页</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 bg-slate-700 text-white rounded-md" href="#">
+<span class="material-icons mr-3">people</span>
+<span class="sidebar-text">用户管理</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">assignment</span>
+<span class="sidebar-text">设备管理</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">settings_suggest</span>
+<span class="sidebar-text">系统设置</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">assessment</span>
+<span class="sidebar-text">报告管理</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">notifications</span>
+<span class="sidebar-text">知识科普</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">business</span>
+<span class="sidebar-text">企业管理</span>
+</a>
+</li>
+<li class="mb-2">
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">admin_panel_settings</span>
+<span class="sidebar-text">用户反馈</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div>
+<a class="sidebar-item flex items-center py-2 px-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">account_circle</span>
+<span class="sidebar-text">企业地</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-6">
+<header class="flex justify-between items-center mb-6">
+<div></div>
+<div class="flex items-center">
+<span class="text-sm text-gray-600 mr-2">中瑞国康 (广东) 科技发展有限公司</span>
+<span class="material-icons text-gray-600">arrow_drop_down</span>
+</div>
+</header>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h2 class="text-xl font-semibold mb-2">用户管理</h2>
+<p class="text-sm text-gray-500 mb-6">
+        本企业总人数: 1人, 男: 0人, 女: 0人, 未设置: 1人
+      </p>
+<div class="grid grid-cols-5 gap-4 mb-6 text-center">
+<div class="p-4 bg-pink-50 rounded-md">
+<p class="text-gray-500 text-sm">未设置</p>
+<p class="text-2xl font-bold">1<span class="text-sm font-normal">人</span></p>
+</div>
+<div class="p-4 bg-blue-50 rounded-md">
+<p class="text-gray-500 text-sm">19岁以下</p>
+<p class="text-2xl font-bold">0<span class="text-sm font-normal">人</span></p>
+</div>
+<div class="p-4 bg-green-50 rounded-md">
+<p class="text-gray-500 text-sm">19-35岁</p>
+<p class="text-2xl font-bold">0<span class="text-sm font-normal">人</span></p>
+</div>
+<div class="p-4 bg-yellow-50 rounded-md">
+<p class="text-gray-500 text-sm">36-45岁</p>
+<p class="text-2xl font-bold">0<span class="text-sm font-normal">人</span></p>
+</div>
+<div class="p-4 bg-purple-50 rounded-md">
+<p class="text-gray-500 text-sm">60岁以上</p>
+<p class="text-2xl font-bold">0<span class="text-sm font-normal">人</span></p>
+</div>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 w-12">性别:</label>
+<div class="flex space-x-1">
+<button class="px-3 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600">全部</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">男</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">女</button>
+</div>
+</div>
+<div class="flex items-start space-x-2">
+<label class="text-sm font-medium text-gray-700 w-12 pt-1">疾病:</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-full cursor-pointer hover:bg-blue-200">全部</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">高血压</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">糖尿病</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">冠心病</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">脑卒中</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">慢阻肺</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">房颤</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">心衰</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">结构性心脏病</span>
+<span class="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-full cursor-pointer hover:bg-blue-200">慢性阻塞性肺疾病(COPD)</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">急性心梗</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">心脏搭桥手术</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">心脏瓣膜手术</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">尾骨手术</span>
+<span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full cursor-pointer hover:bg-gray-200">心脏手术</span>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 w-12">年龄:</label>
+<div class="flex space-x-1">
+<button class="px-3 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600">全部</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">19-35</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">36-45</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">46-59</button>
+<button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">60以上</button>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 w-12">企业:</label>
+<select class="border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:border-blue-500 w-64">
+<option>全部</option>
+<option>企业A</option>
+<option>企业B</option>
+</select>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 w-12">用户:</label>
+<input class="border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:border-blue-500 w-64" placeholder="请输入用户姓名或手机号" type="text"/>
+</div>
+</div>
+<div class="flex space-x-3 mb-6">
+<button class="flex items-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons text-base mr-1">search</span>查询
+        </button>
+<button class="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons text-base mr-1">add</span>添加用户
+        </button>
+<button class="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons text-base mr-1">file_upload</span>批量导入用户
+        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">账号</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">手机号</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">性别</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">年龄</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">企业类型</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">所属企业</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">角色</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">佩戴设备</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">注册时间/绑定时间</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+</tr>
+</thead>
+<tbody class="bg-white divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">zhongjianguokang</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">民营企业</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">中瑞国康 (广东) 科技发展有限公司</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">企业管理员</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023-04-22 19:35:27</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-blue-600 hover:text-blue-900" href="#">查看</a>
+<a class="text-blue-600 hover:text-blue-900 ml-2" href="#">编辑</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between mt-6 text-sm text-gray-600">
+<div class="flex items-center">
+<span>20条/页</span>
+<span class="material-icons text-gray-400">arrow_drop_down</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-1 rounded-md hover:bg-gray-100 disabled:opacity-50" disabled="">
+<span class="material-icons text-xl">chevron_left</span>
+</button>
+<span class="px-3 py-1 bg-blue-500 text-white rounded-md text-xs">1</span>
+<button class="p-1 rounded-md hover:bg-gray-100">
+<span class="material-icons text-xl">chevron_right</span>
+</button>
+<span>前往</span>
+<input class="w-12 border border-gray-300 rounded-md px-2 py-1 text-center text-xs" type="number" value="1"/>
+<span>页</span>
+</div>
+</div>
+</div>
+</main>
+<script>
+    const toggleSidebarBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarTexts = document.querySelectorAll('.sidebar-text');
+    // Function to toggle sidebar based on screen size
+    function handleSidebarToggle() {
+      if (window.innerWidth < 768) { // md breakpoint in Tailwind
+        sidebar.classList.add('sidebar-collapsed');
+        sidebarTexts.forEach(text => text.classList.add('hidden'));
+      } else {
+        sidebar.classList.remove('sidebar-collapsed');
+        sidebarTexts.forEach(text => text.classList.remove('hidden'));
+      }
+    }
+    toggleSidebarBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-collapsed');
+      sidebarTexts.forEach(text => text.classList.toggle('hidden'));
+    });
+    // Initial check and event listener for window resize
+    handleSidebarToggle();
+    window.addEventListener('resize', handleSidebarToggle);
+  </script>
+
+</body></html> 
