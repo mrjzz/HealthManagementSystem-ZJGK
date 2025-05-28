@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/user-management",
+      "dest": "/stitch-usrManagement.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
