@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>健康管理平台 - 企业管理</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+<div class="flex h-screen">
+<aside class="w-64 bg-gray-800 text-gray-300">
+<div class="p-4 text-xl font-semibold text-white flex items-center space-x-2">
+<span class="material-icons">menu</span>
+<span>健康管理平台</span>
+</div>
+<nav class="mt-4">
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">home</span>
+          首页
+        </a>
+<div class="group">
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">people</span>
+            用户管理
+            <span class="material-icons ml-auto transform transition-transform duration-200 group-hover:rotate-90">chevron_right</span>
+</a>
+</div>
+<div class="group">
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">settings</span>
+              设备管理
+              <span class="material-icons ml-auto transform transition-transform duration-200 group-hover:rotate-90">chevron_right</span>
+</a>
+</div>
+<div class="group">
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">assignment</span>
+              系统设置
+              <span class="material-icons ml-auto transform transition-transform duration-200 group-hover:rotate-90">chevron_right</span>
+</a>
+<div class="pl-8 hidden group-hover:block">
+<a class="block px-4 py-2 text-sm hover:bg-gray-700" href="#">企业组织</a>
+<a class="block px-4 py-2 text-sm hover:bg-gray-700" href="#">权限管理</a>
+<a class="block px-4 py-2 text-sm hover:bg-gray-700" href="#">日志</a>
+</div>
+</div>
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">warning</span>
+          报警管理
+        </a>
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">share</span>
+          知识分享
+        </a>
+<a class="flex items-center px-4 py-3 bg-gray-700 text-white" href="#">
+<span class="material-icons mr-3">business</span>
+          企业管理
+        </a>
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">person</span>
+          用户权限
+        </a>
+<a class="flex items-center px-4 py-3 hover:bg-gray-700" href="#">
+<span class="material-icons mr-3">settings_applications</span>
+          设备检测
+        </a>
+</nav>
+</aside>
+<div class="flex-1 flex flex-col">
+<header class="bg-white shadow-sm p-4 flex justify-between items-center">
+<div class="text-lg font-semibold text-gray-700">企业管理</div>
+<div class="flex items-center space-x-2 text-sm text-gray-600">
+<span>中数通服（广州）科技发展有限公司</span>
+<span class="material-icons">person</span>
+<span>企业管理员</span>
+<span class="material-icons">keyboard_arrow_down</span>
+</div>
+</header>
+<main class="flex-1 p-6">
+<div class="bg-white p-6 rounded-lg shadow">
+<table class="w-full text-sm">
+<thead>
+<tr class="border-b text-left text-gray-600">
+<th class="py-3 px-4 font-medium">企业名称</th>
+<th class="py-3 px-4 font-medium">企业类型</th>
+<th class="py-3 px-4 font-medium">企业人数</th>
+<th class="py-3 px-4 font-medium">地址</th>
+<th class="py-3 px-4 font-medium">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b hover:bg-gray-50">
+<td class="py-3 px-4">中数通服（广州）科技发展有限公司</td>
+<td class="py-3 px-4">保险企业</td>
+<td class="py-3 px-4">30</td>
+<td class="py-3 px-4">深圳市宝安区西乡街道乐平社区共和工业路1号中关村信息谷众SPC产业园B栋411</td>
+<td class="py-3 px-4">
+<button class="text-blue-500 hover:text-blue-700 text-xs font-medium mr-2">查看</button>
+<button class="text-blue-500 hover:text-blue-700 text-xs font-medium mr-2">禁用</button>
+<button class="text-blue-500 hover:text-blue-700 text-xs font-medium mr-2">添加下级</button>
+<button class="text-blue-500 hover:text-blue-700 text-xs font-medium mr-2">编辑</button>
+<button class="text-red-500 hover:text-red-700 text-xs font-medium">删除</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>健康管理后台 - 日志</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex">
+<aside class="w-64 bg-slate-800 text-white h-screen flex flex-col fixed top-0 left-0">
+<div class="p-6 text-xl font-semibold border-b border-slate-700">
+      健康管理平台
+    </div>
+<nav class="flex-1 space-y-2 p-4">
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">home</span>
+        主页
+      </a>
+<div class="relative">
+<button class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg group">
+<div class="flex items-center">
+<span class="material-icons mr-3">account_circle</span>
+            账户管理
+          </div>
+<span class="material-icons transform transition-transform duration-200 group-focus:rotate-180">expand_less</span>
+</button>
+<div class="pl-4 space-y-1 hidden group-focus-within:block">
+<a class="block px-4 py-2 text-sm text-gray-400 hover:bg-slate-700 hover:text-white rounded-lg" href="#">账号管理</a>
+<a class="block px-4 py-2 text-sm text-gray-400 hover:bg-slate-700 hover:text-white rounded-lg" href="#">角色管理</a>
+</div>
+</div>
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">settings_applications</span>
+        设备管理
+      </a>
+<div class="relative">
+<button class="w-full flex items-center justify-between px-4 py-2.5 text-sm bg-slate-700 text-white rounded-lg group">
+<div class="flex items-center">
+<span class="material-icons mr-3">admin_panel_settings</span>
+            系统配置
+          </div>
+<span class="material-icons transform transition-transform duration-200 rotate-180">expand_less</span>
+</button>
+<div class="pl-4 space-y-1">
+<a class="block px-4 py-2 text-sm text-gray-400 hover:bg-slate-700 hover:text-white rounded-lg" href="#">企业组织</a>
+<a class="block px-4 py-2 text-sm text-gray-400 hover:bg-slate-700 hover:text-white rounded-lg" href="#">权限管理</a>
+<a class="block px-4 py-2 text-sm text-white bg-blue-600 rounded-lg" href="#">日志</a>
+</div>
+</div>
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">bar_chart</span>
+        报表管理
+      </a>
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">description</span>
+        知识库
+      </a>
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">people</span>
+        用户反馈
+      </a>
+<a class="flex items-center px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-white rounded-lg" href="#">
+<span class="material-icons mr-3">tune</span>
+        设备监测
+      </a>
+</nav>
+</aside>
+<main class="ml-64 flex-1">
+<header class="bg-white shadow-sm p-4 flex justify-between items-center sticky top-0 z-10">
+<h1 class="text-xl font-semibold text-gray-800">日志</h1>
+<div class="flex items-center">
+<span class="text-sm text-gray-600 mr-2">运营商 (广东) 科技发展有限公司</span>
+<span class="material-icons text-gray-500">keyboard_arrow_down</span>
+</div>
+</header>
+<div class="p-6">
+<div class="bg-white shadow-md rounded-lg overflow-hidden">
+<table class="w-full text-sm text-left text-gray-500">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50">
+<tr>
+<th class="px-6 py-3" scope="col">账号</th>
+<th class="px-6 py-3" scope="col">操作人</th>
+<th class="px-6 py-3" scope="col">操作</th>
+<th class="px-6 py-3" scope="col">操作时间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-28 15:29:52</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">新增企业角色</td>
+<td class="px-6 py-4">2025-05-28 15:10:08</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">新增企业角色</td>
+<td class="px-6 py-4">2025-05-28 15:09:07</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-28 15:08:20</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-28 12:00:30</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-27 18:20:37</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:26:57</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:23:01</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:17:09</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:14:13</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:10:26</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 14:08:54</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:41:50</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:41:45</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:41:25</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:27:06</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:25:33</td>
+</tr>
+<tr class="bg-white hover:bg-gray-50">
+<td class="px-6 py-4">zhongjianguokang</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">账号登录</td>
+<td class="px-6 py-4">2025-05-26 13:16:59</td>
+</tr>
+</tbody>
+</table>
+<div class="flex items-center justify-end px-6 py-3 bg-white border-t">
+<span class="text-sm text-gray-700 mr-4">20条/页</span>
+<button class="p-1 rounded-md hover:bg-gray-100 disabled:opacity-50" disabled="">
+<span class="material-icons text-gray-500">chevron_left</span>
+</button>
+<span class="px-3 py-1.5 text-sm bg-blue-500 text-white rounded-md mx-1">1</span>
+<button class="p-1 rounded-md hover:bg-gray-100">
+<span class="material-icons text-gray-500">chevron_right</span>
+</button>
+<span class="text-sm text-gray-700 ml-4">前往</span>
+<input class="w-12 text-center border border-gray-300 rounded-md py-1 mx-2 text-sm focus:ring-blue-500 focus:border-blue-500" type="number" value="1"/>
+<span class="text-sm text-gray-700">页</span>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

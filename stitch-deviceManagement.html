@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>设备管理</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex">
+<aside class="w-64 bg-gray-800 text-white min-h-screen p-4">
+<div class="text-2xl font-bold mb-8">调度管理平台</div>
+<nav>
+<ul>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">home</span>
+            主页
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">person</span>
+            账户管理
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-white bg-gray-700 p-2 rounded-md" href="#">
+<span class="material-icons mr-2">devices</span>
+            设备管理
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">settings</span>
+            系统设置
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">business</span>
+            企业组织
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">terminal</span>
+            终端管理
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">description</span>
+            日志
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">warning</span>
+            报警管理
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">pie_chart</span>
+            统计分析
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">group</span>
+            企业管理
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">admin_panel_settings</span>
+            用户权限
+          </a>
+</li>
+<li class="mb-4">
+<a class="flex items-center text-gray-300 hover:text-white" href="#">
+<span class="material-icons mr-2">map</span>
+            设备地图
+          </a>
+</li>
+</ul>
+</nav>
+</aside>
+<main class="flex-1 p-6">
+<header class="flex justify-between items-center mb-6">
+<h1 class="text-2xl font-semibold text-gray-700">设备管理</h1>
+<div class="flex items-center">
+<span class="text-gray-600 mr-4">中创数服（广东）科技发展有限公司-企业管理员</span>
+<span class="material-icons text-gray-600">arrow_drop_down</span>
+</div>
+</header>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+<p class="text-sm text-gray-500 mb-4">本企业设备数: 0个</p>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+<div>
+<p class="text-gray-500 text-sm">未激活数</p>
+<p class="text-2xl font-bold text-red-500">0<span class="text-sm">个</span></p>
+<p class="text-xs text-gray-400">(0%)</p>
+</div>
+<div>
+<p class="text-gray-500 text-sm">激活数</p>
+<p class="text-2xl font-bold text-green-500">0<span class="text-sm">个</span></p>
+<p class="text-xs text-gray-400">(0.00%)</p>
+</div>
+<div>
+<p class="text-gray-500 text-sm">报警数</p>
+<p class="text-2xl font-bold text-yellow-500">0<span class="text-sm">个</span></p>
+<p class="text-xs text-gray-400">(0.00%)</p>
+</div>
+<div>
+<p class="text-gray-500 text-sm">责任周期</p>
+<p class="text-2xl font-bold text-blue-500">0<span class="text-sm">个</span></p>
+<p class="text-xs text-gray-400">(0.00%)</p>
+</div>
+<div>
+<p class="text-gray-500 text-sm">合约周期</p>
+<p class="text-2xl font-bold text-purple-500">0<span class="text-sm">个</span></p>
+<p class="text-xs text-gray-400">(0.00%)</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+<form class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">型号</label>
+<div class="flex space-x-2">
+<button class="px-4 py-2 border border-blue-500 text-blue-500 bg-blue-100 rounded-md text-sm" type="button">全部</button>
+<button class="px-4 py-2 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-md text-sm" type="button">T3</button>
+<button class="px-4 py-2 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-md text-sm" type="button">T6</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="enterprise">企业</label>
+<div class="relative">
+<select class="w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md appearance-none" id="enterprise" name="enterprise">
+<option>全部</option>
+</select>
+<span class="material-icons absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="status">状态</label>
+<div class="flex space-x-2">
+<button class="px-4 py-2 border border-blue-500 text-blue-500 bg-blue-100 rounded-md text-sm" type="button">全部</button>
+<button class="px-4 py-2 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-md text-sm" type="button">已激活</button>
+<button class="px-4 py-2 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-md text-sm" type="button">未激活</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="bound-phone">绑定手机</label>
+<input class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="bound-phone" name="bound-phone" placeholder="请输入绑定手机" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="imei">IMEI</label>
+<input class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="imei" name="imei" placeholder="请输入 IMEI" type="text"/>
+</div>
+</form>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<div class="flex flex-wrap gap-2 mb-6">
+<button class="flex items-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons mr-1 text-base">search</span>查询
+        </button>
+<button class="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons mr-1 text-base">add_circle_outline</span>绑定设备到企业
+        </button>
+<button class="flex items-center bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons mr-1 text-base">sync_alt</span>批量解绑设备与企业
+        </button>
+<button class="flex items-center bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons mr-1 text-base">file_download</span>批量到期
+        </button>
+<button class="flex items-center bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm">
+<span class="material-icons mr-1 text-base">delete_outline</span>批量删除
+        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">
+<input class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out rounded" type="checkbox"/>
+</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">设备名称</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">型号</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">IMEI</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">ICCID</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">所属企业</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">企业类型</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">状态</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">使用状态</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">激活状态</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">绑定人员</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">绑定手机</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">添加时间</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">操作</th>
+</tr>
+</thead>
+<tbody class="bg-white divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-12 text-center text-gray-500" colspan="14">
+                暂无数据
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+
+</body></html>

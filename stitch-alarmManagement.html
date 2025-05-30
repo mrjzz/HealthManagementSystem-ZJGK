@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>报警管理</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex">
+<aside class="w-60 bg-slate-800 text-white min-h-screen flex flex-col">
+<div class="p-5 text-xl font-semibold border-b border-slate-700">健康管理平台</div>
+<nav class="flex-grow">
+<ul>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">home</span>
+            主页
+          </a>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">people</span>
+            用户管理
+          </a>
+</li>
+<li class="relative">
+<button class="w-full flex items-center px-5 py-3 hover:bg-slate-700 text-left">
+<span class="material-icons-outlined mr-3">alarm</span>
+            报警记录
+            <span class="material-icons-outlined ml-auto">expand_less</span>
+</button>
+<ul class="pl-8 bg-slate-700">
+<li><a class="block px-5 py-2 hover:bg-slate-600" href="#">企业组织</a></li>
+<li><a class="block px-5 py-2 hover:bg-slate-600" href="#">机构管理</a></li>
+<li><a class="block px-5 py-2 hover:bg-slate-600" href="#">日志</a></li>
+</ul>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 bg-sky-600 text-white" href="#">
+<span class="material-icons-outlined mr-3">warning</span>
+            报警管理
+          </a>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">show_chart</span>
+            统计分析
+          </a>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">business</span>
+            企业管理
+          </a>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">admin_panel_settings</span>
+            用户权限
+          </a>
+</li>
+<li>
+<a class="flex items-center px-5 py-3 hover:bg-slate-700" href="#">
+<span class="material-icons-outlined mr-3">settings</span>
+            设备检测
+          </a>
+</li>
+</ul>
+</nav>
+</aside>
+<main class="flex-1">
+<header class="bg-white shadow-sm p-4 flex justify-end items-center">
+<div class="flex items-center">
+<span class="material-icons-outlined mr-2 text-gray-600">notifications</span>
+<span class="mr-4 text-gray-600">中科健康 (广州) 科技发展有限公司-企业管理员</span>
+<span class="material-icons-outlined text-gray-600">expand_more</span>
+</div>
+</header>
+<div class="p-6">
+<h1 class="text-2xl font-semibold text-gray-800 mb-6">报警管理</h1>
+<div class="bg-white p-6 rounded-lg shadow">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 items-center">
+<div class="flex items-center col-span-full">
+<label class="text-sm font-medium text-gray-700 mr-2 whitespace-nowrap">报警类型:</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">心率过高</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">心率过低</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">体温过高</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">SOS呼叫</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">跌倒提醒</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">电子围栏</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">设备</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">呼吸率</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">压力</button>
+</div>
+</div>
+<div class="flex items-center col-span-full">
+<label class="text-sm font-medium text-gray-700 mr-2 whitespace-nowrap">报警来源:</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">血氧</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">心率不齐</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">房颤</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">心动过速</button>
+<button class="px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">睡眠质量不佳</button>
+</div>
+</div>
+<div class="flex items-center col-span-full md:col-span-2">
+<label class="text-sm font-medium text-gray-700 mr-2 whitespace-nowrap">报警时间:</label>
+<div class="flex items-center gap-2">
+<input class="border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-sky-500 focus:border-sky-500" type="date" value="2023-05-10"/>
+<span class="text-gray-500">-</span>
+<input class="border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-sky-500 focus:border-sky-500" type="date" value="2023-05-28"/>
+</div>
+</div>
+<div class="col-span-full md:col-span-1 flex md:justify-end">
+<button class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+<span class="material-icons-outlined text-base mr-1">search</span>
+                查询
+            </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50">
+<tr>
+<th class="px-6 py-3" scope="col">报警时间</th>
+<th class="px-6 py-3" scope="col">用户</th>
+<th class="px-6 py-3" scope="col">联系方式</th>
+<th class="px-6 py-3" scope="col">报警类型</th>
+<th class="px-6 py-3" scope="col">备注</th>
+<th class="px-6 py-3" scope="col">状态 <span class="material-icons-outlined text-xs align-middle">unfold_more</span></th>
+<th class="px-6 py-3" scope="col">处理备注</th>
+<th class="px-6 py-3" scope="col">处理人员</th>
+<th class="px-6 py-3" scope="col">操作</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="text-center py-20">
+<span class="material-icons-outlined text-6xl text-gray-300">dataset</span>
+<p class="text-gray-400 mt-2">暂无数据</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-gray-200">
+<div class="text-sm text-gray-600">
+<span>50条/页</span>
+<button class="ml-1 p-1 rounded-md hover:bg-gray-100 focus:outline-none">
+<span class="material-icons-outlined text-lg align-middle">expand_more</span>
+</button>
+</div>
+<div class="flex items-center space-x-1">
+<button class="p-2 rounded-md hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+<span class="material-icons-outlined text-lg">chevron_left</span>
+</button>
+<button class="px-3 py-1.5 text-sm rounded-md bg-sky-500 text-white">1</button>
+<button class="p-2 rounded-md hover:bg-gray-100">
+<span class="material-icons-outlined text-lg">chevron_right</span>
+</button>
+<span class="text-sm text-gray-600 ml-2">前往</span>
+<input class="w-12 border border-gray-300 rounded-md px-2 py-1 text-sm text-center focus:ring-sky-500 focus:border-sky-500" type="number" value="1"/>
+<span class="text-sm text-gray-600">页</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

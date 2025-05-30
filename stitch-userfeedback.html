@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>用户反馈</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+<div class="flex h-screen">
+<aside class="w-64 bg-white shadow-md">
+<div class="p-6 border-b">
+<h1 class="text-2xl font-semibold text-gray-800">健康管理平台</h1>
+</div>
+<nav class="mt-6">
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">home</span>
+<span class="ml-3">用户管理</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">bar_chart</span>
+<span class="ml-3">会话分析</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">assignment</span>
+<span class="ml-3">应用管理</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">description</span>
+<span class="ml-3">日志</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">settings</span>
+<span class="ml-3">权限管理</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">notifications</span>
+<span class="ml-3">通知</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">business</span>
+<span class="ml-3">企业管理</span>
+</a>
+<a class="flex items-center px-6 py-3 bg-blue-50 text-blue-600 border-l-4 border-blue-500" href="#">
+<span class="material-icons">feedback</span>
+<span class="ml-3">用户反馈</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800" href="#">
+<span class="material-icons">help_outline</span>
+<span class="ml-3">问题反馈</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1">
+<header class="bg-white shadow-sm">
+<div class="flex items-center justify-between p-4">
+<div>
+<h2 class="text-xl font-semibold text-gray-700">用户反馈</h2>
+</div>
+<div class="flex items-center">
+<span class="mr-4 text-sm text-gray-600">欢迎回来，广州市某某科技有限公司</span>
+<span class="material-icons text-gray-500">notifications</span>
+<div class="relative ml-4">
+<img alt="User avatar" class="rounded-full w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbw38WNz0oy7DKQmrA5-eZlEVFiTV7xrysaYWTf3PhyqUjLO0vx2dZv2S_A9pLuHjXwe5HSKKyFEwkWXWJCH4wNGAlX_kPvBdoqFarc4gU7LkfnCS4sADFLvirx1kHsCJjg2uRZQyvl3II5OrSkKuN-Cgqu5VWImykLUB24MsLyiGWpw6F4jy9Ke0RkNi9OD-tuu5LNFn4M_ezn0yVvLj-SFUZ_l2fSjdYLEEuwu5g22XOAym6xvQBgFRwtmyhbzojaad9HmMoHVs"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-6">
+<div class="bg-white p-6 rounded-lg shadow">
+<div class="flex items-center mb-6">
+<label class="mr-2 text-sm font-medium text-gray-700" for="status">状态:</label>
+<select class="border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" id="status" name="status">
+<option value="">全部</option>
+<option value="pending">待处理</option>
+<option value="resolved">已解决</option>
+</select>
+<input class="ml-4 border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 w-64" placeholder="请输入关键字" type="text"/>
+<button class="ml-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+<span class="material-icons text-sm mr-1">search</span>
+              查询
+            </button>
+</div>
+<table class="w-full text-sm text-left text-gray-500">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50">
+<tr>
+<th class="p-4" scope="col">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</th>
+<th class="px-6 py-3" scope="col">标题</th>
+<th class="px-6 py-3" scope="col">反馈问题及回复/处理结果</th>
+<th class="px-6 py-3" scope="col">反馈人</th>
+<th class="px-6 py-3" scope="col">反馈时间</th>
+<th class="px-6 py-3" scope="col">回复内容</th>
+<th class="px-6 py-3" scope="col">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">崩溃</td>
+<td class="px-6 py-4">
+<div>反馈问题这块显示的内容很多很多很多...请工程师尽快处理</div>
+<div class="text-xs text-gray-400 mt-1">➡️ 不是bug不给予处理</div>
+</td>
+<td class="px-6 py-4">19912188821</td>
+<td class="px-6 py-4">2025-03-28 17:24:13</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">这款应用真好用，极力推荐了！</td>
+<td class="px-6 py-4">
+<div>这款应用真好用，界面美观，功能强大，极力推荐，期待后续一...</div>
+<div class="text-xs text-gray-400 mt-1">➡️ 感谢支持^ ^ ^_^</div>
+</td>
+<td class="px-6 py-4">13726769999</td>
+<td class="px-6 py-4">2025-03-18 15:22:42</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">很好用的应用感谢感谢感谢</td>
+<td class="px-6 py-4">
+<div>App还可以再开发些免费版的服务</div>
+</td>
+<td class="px-6 py-4">18828986329</td>
+<td class="px-6 py-4">2025-02-19 10:05:12</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">～(^з^)-☆</td>
+<td class="px-6 py-4">
+<div>感谢</div>
+</td>
+<td class="px-6 py-4">17676226316</td>
+<td class="px-6 py-4">2025-02-10 19:41:28</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">蓝牙为什么连接</td>
+<td class="px-6 py-4">
+<div>app蓝牙为什么显示未连接</div>
+</td>
+<td class="px-6 py-4">13267114201</td>
+<td class="px-6 py-4">2025-01-23 20:05:01</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">123</td>
+<td class="px-6 py-4">
+<div>1233</div>
+</td>
+<td class="px-6 py-4">18924702303</td>
+<td class="px-6 py-4">2025-01-15 14:14:08</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">不错啊</td>
+<td class="px-6 py-4">
+<div>挺好的啊</div>
+</td>
+<td class="px-6 py-4">19912188821</td>
+<td class="px-6 py-4">2025-01-02 17:51:15</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">哈哈哈哈</td>
+<td class="px-6 py-4">
+<div>哈哈哈哈哈哈哈哈哈哈哈哈</div>
+</td>
+<td class="px-6 py-4">19912188821</td>
+<td class="px-6 py-4">2024-12-30 16:58:24</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">网络错误</td>
+<td class="px-6 py-4">
+<div>登录不了显示网络错误？明明我的网络很好啊</div>
+</td>
+<td class="px-6 py-4">19912188821</td>
+<td class="px-6 py-4">2024-12-30 14:31:13</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">123</td>
+<td class="px-6 py-4">
+<div>2333232</div>
+</td>
+<td class="px-6 py-4">18315048849</td>
+<td class="px-6 py-4">2024-12-24 19:11:26</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">v</td>
+<td class="px-6 py-4">
+<div>希望APP内有今日待办清单之类的功能可以督促我每天坚持运动以及喝水饮食，</div>
+<div>现在有很多软件都带有桌面小组件或者灵动岛之类的，可以提醒我运动或者饮食。</div>
+<div>因为我本身自制力差，很容易忘记运动和喝水，所以希望可以有这方面的功能。</div>
+<div>也希望能够增加提醒功能，比如可以设置每天运动的时间，</div>
+<div>到时候APP就会提醒我该运动了。谢谢！</div>
+</td>
+<td class="px-6 py-4">18006647365</td>
+<td class="px-6 py-4">2024-12-24 14:23:51</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">哈哈</td>
+<td class="px-6 py-4">
+<div>哈哈</div>
+</td>
+<td class="px-6 py-4">18006647365</td>
+<td class="px-6 py-4">2024-12-24 14:08:01</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">哈哈</td>
+<td class="px-6 py-4">
+<div>哈哈</div>
+</td>
+<td class="px-6 py-4">18006647365</td>
+<td class="px-6 py-4">2024-12-24 14:07:51</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">哈哈哈</td>
+<td class="px-6 py-4">
+<div>不错</div>
+</td>
+<td class="px-6 py-4">18006647365</td>
+<td class="px-6 py-4">2024-12-24 14:07:18</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">测试</td>
+<td class="px-6 py-4">
+<div>哈哈哈</div>
+</td>
+<td class="px-6 py-4">18006647365</td>
+<td class="px-6 py-4">2024-12-24 14:06:42</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">哈哈哈</td>
+<td class="px-6 py-4">
+<div>测验嘛</div>
+</td>
+<td class="px-6 py-4">18025947322</td>
+<td class="px-6 py-4">2024-12-20 14:24:45</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">非常好</td>
+<td class="px-6 py-4">
+<div>12122</div>
+</td>
+<td class="px-6 py-4">18674890862</td>
+<td class="px-6 py-4">2024-12-20 14:23:04</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">非常好</td>
+<td class="px-6 py-4">
+<div>12122</div>
+</td>
+<td class="px-6 py-4">18674890862</td>
+<td class="px-6 py-4">2024-12-20 14:22:43</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">不错</td>
+<td class="px-6 py-4">
+<div>天</div>
+</td>
+<td class="px-6 py-4">18025947322</td>
+<td class="px-6 py-4">2024-12-20 14:17:45</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+<tr class="bg-white hover:bg-gray-50">
+<td class="p-4">
+<input class="form-checkbox h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" type="checkbox"/>
+</td>
+<td class="px-6 py-4">yyyyy</td>
+<td class="px-6 py-4">
+<div>空</div>
+</td>
+<td class="px-6 py-4">18025947322</td>
+<td class="px-6 py-4">2024-12-20 14:16:54</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<button class="text-blue-600 hover:text-blue-800 font-medium">回复</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="flex items-center justify-between mt-6 text-sm text-gray-500">
+<div>
+<span>10条/页</span>
+</div>
+<div class="flex items-center">
+<button class="px-3 py-1 border border-gray-300 rounded-l-md hover:bg-gray-100 focus:outline-none">
+<span class="material-icons text-base">chevron_left</span>
+</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 bg-blue-50 text-blue-600 hover:bg-gray-100 focus:outline-none">1</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">2</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">3</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">4</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">5</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">6</button>
+<button class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 focus:outline-none">...</button>
+<button class="px-3 py-1 border border-gray-300 rounded-r-md hover:bg-gray-100 focus:outline-none">
+<span class="material-icons text-base">chevron_right</span>
+</button>
+<span class="ml-4">前往</span>
+<input class="w-12 ml-2 border border-gray-300 rounded-md px-2 py-1 text-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" type="number" value="1"/>
+<span class="ml-2">页</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

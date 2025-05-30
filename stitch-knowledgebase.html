@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>健康管理后台</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .sidebar-item.active {
+      background-color: #4f46e5;
+      color: white;
+    }
+    .sidebar-item.active .material-icons-outlined {
+      color: white;
+    }
+    .sidebar-item:hover {
+      background-color: #e0e7ff;
+    }
+    .sidebar-item:hover .material-icons-outlined {
+      color: #4f46e5;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex">
+<aside class="w-64 bg-slate-800 text-gray-300 min-h-screen flex flex-col fixed">
+<div class="p-6 text-xl font-semibold text-white border-b border-slate-700">
+      健康管理平台
+    </div>
+<nav class="flex-1 space-y-2 p-4">
+<a class="sidebar-item flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined text-gray-400">home</span>
+<span>主页</span>
+</a>
+<div class="sidebar-item p-3 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-icons-outlined text-gray-400">person</span>
+<span>用户管理</span>
+</div>
+<span class="material-icons-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+<a class="sidebar-item flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined text-gray-400">settings</span>
+<span>系统设置</span>
+</a>
+<a class="sidebar-item flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined text-gray-400">shield</span>
+<span>权限管理</span>
+</a>
+<a class="sidebar-item active flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined">description</span>
+<span>知识库</span>
+</a>
+<a class="sidebar-item flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined text-gray-400">bar_chart</span>
+<span>用户反馈</span>
+</a>
+<a class="sidebar-item flex items-center space-x-3 p-3 rounded-lg" href="#">
+<span class="material-icons-outlined text-gray-400">business</span>
+<span>企业信息</span>
+</a>
+</nav>
+</aside>
+<main class="ml-64 flex-1 p-6">
+<header class="bg-white shadow-sm rounded-lg p-4 flex justify-between items-center mb-6">
+<h1 class="text-xl font-semibold text-gray-700">知识库</h1>
+<div class="flex items-center space-x-3 text-sm text-gray-600">
+<span>中粮集团 (广州) 科技发展有限公司</span>
+<span class="material-icons-outlined text-gray-400">person_outline</span>
+<span>企业管理员</span>
+<span class="material-icons-outlined text-gray-400">expand_more</span>
+</div>
+</header>
+<div class="bg-white shadow-md rounded-lg p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 whitespace-nowrap" for="publishDate">发布日期：</label>
+<input class="border border-gray-300 rounded-md p-2 text-sm flex-1" id="startDate" type="date"/>
+<span class="text-gray-500">至</span>
+<input class="border border-gray-300 rounded-md p-2 text-sm flex-1" id="endDate" type="date"/>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 whitespace-nowrap" for="articleCategory">文章分类：</label>
+<select class="border border-gray-300 rounded-md p-2 text-sm flex-1" id="articleCategory">
+<option>全部</option>
+<option>健康资讯</option>
+<option>营养科普</option>
+</select>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-sm font-medium text-gray-700 whitespace-nowrap" for="status">状态：</label>
+<select class="border border-gray-300 rounded-md p-2 text-sm flex-1" id="status">
+<option>全部</option>
+<option>已发布</option>
+<option>草稿</option>
+</select>
+</div>
+<div class="flex items-center space-x-2 col-span-1 md:col-span-2 lg:col-span-1">
+<label class="text-sm font-medium text-gray-700 whitespace-nowrap" for="author">用户：</label>
+<input class="border border-gray-300 rounded-md p-2 text-sm flex-1" id="author" placeholder="请输入用户名" type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-3 mb-6">
+<button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm flex items-center space-x-1">
+<span class="material-icons-outlined text-sm">search</span>
+<span>查询</span>
+</button>
+<button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm flex items-center space-x-1">
+<span class="material-icons-outlined text-sm">add</span>
+<span>新增文章</span>
+</button>
+<button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm">启用</button>
+<button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm">停用</button>
+<button class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm">批量删除</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50">
+<tr>
+<th class="p-4" scope="col">
+<input class="rounded border-gray-300" type="checkbox"/>
+</th>
+<th class="px-6 py-3" scope="col">标题</th>
+<th class="px-6 py-3" scope="col">作者</th>
+<th class="px-6 py-3" scope="col">标签</th>
+<th class="px-6 py-3" scope="col">状态</th>
+<th class="px-6 py-3" scope="col">简介</th>
+<th class="px-6 py-3" scope="col">封面图片</th>
+<th class="px-6 py-3" scope="col">正文/草稿</th>
+<th class="px-6 py-3" scope="col">发布时间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="p-4">
+<input class="rounded border-gray-300" type="checkbox"/>
+</td>
+<td class="px-6 py-4">冬天饮食的禁忌你知多少，很多...</td>
+<td class="px-6 py-4">李纯</td>
+<td class="px-6 py-4">
+<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">健康咨询</span>
+<span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">健身</span>
+<span class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">健康科普</span>
+<span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">食疗</span>
+<span class="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">科学膳食</span>
+</td>
+<td class="px-6 py-4 text-green-600">启用</td>
+<td class="px-6 py-4"></td>
+<td class="px-6 py-4">
+<img alt="冬天饮食图片" class="w-16 h-16 object-cover rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXs5WYzvY8fO1yk-L80nLPvGP-tRhvrhFtWVVTyvldoI3uVkK7TNieb5JDds-CBF6IgSq4zX7_KN9dJ7y35ICf1t2m2RZRSnzax98WXkv_UERLkkZ0qj3ncGDFRmfS-rr5-bsyTDBYuuvBaREoiOFp2dfpVqguizSBJ5jiIvssoQ_sb4RPnYWk5BD9oQebvmCK9n_T7L0jSB26rsJBHAC8yBwO1XEV043ZYmI9CQ0gpfYnIpvC6QLwh9BZJIJsh_a5g0iG08Ei8ok"/>
+</td>
+<td class="px-6 py-4">
+<a class="font-medium text-blue-600 hover:underline" href="#">预览文章</a>
+</td>
+<td class="px-6 py-4">2024-12-10 17:56:29</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex justify-between items-center mt-6 text-sm text-gray-600">
+<div class="flex items-center space-x-2">
+<select class="border border-gray-300 rounded-md p-1.5">
+<option>10条/页</option>
+<option>20条/页</option>
+<option>50条/页</option>
+</select>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-1.5 border border-gray-300 rounded-md hover:bg-gray-100">
+<span class="material-icons-outlined text-sm">chevron_left</span>
+</button>
+<span class="px-3 py-1.5 bg-blue-500 text-white rounded-md">1</span>
+<button class="p-1.5 border border-gray-300 rounded-md hover:bg-gray-100">
+<span class="material-icons-outlined text-sm">chevron_right</span>
+</button>
+<span>前往</span>
+<input class="border border-gray-300 rounded-md p-1.5 w-16 text-center" type="number" value="1"/>
+<span>页</span>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>健康管理后台</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;-webkit-font-smoothing: antialiased;text-rendering: optimizeLegibility;-moz-osx-font-smoothing: grayscale;font-feature-settings: 'liga';
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+<div class="flex h-screen">
+<aside class="w-64 bg-slate-800 text-gray-300 flex flex-col">
+<div class="p-4 border-b border-slate-700">
+<h1 class="text-xl font-semibold text-white">健康管理平台</h1>
+</div>
+<nav class="flex-grow">
+<ul class="space-y-1 py-2">
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">home</span>
+              主页
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">group</span>
+              用户管理
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">devices</span>
+              设备管理
+            </a>
+</li>
+<li class="relative">
+<button class="w-full flex items-center justify-between px-4 py-3 hover:bg-slate-700 rounded-md focus:outline-none" onclick="toggleDropdown('systemSettings')">
+<div class="flex items-center">
+<span class="material-icons mr-3">settings</span>
+                系统设置
+              </div>
+<span class="material-icons transition-transform duration-200" id="systemSettingsIcon">expand_more</span>
+</button>
+<ul class="hidden ml-4 mt-1 space-y-1" id="systemSettings">
+<li><a class="block px-4 py-2 hover:bg-slate-700 rounded-md" href="#">企业组织</a></li>
+<li><a class="block px-4 py-2 hover:bg-slate-700 rounded-md" href="#">应用授权</a></li>
+<li><a class="block px-4 py-2 hover:bg-slate-700 rounded-md" href="#">日志</a></li>
+</ul>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">warning</span>
+              预警管理
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">analytics</span>
+              统计分析
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">business</span>
+              企业管理
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-slate-700 rounded-md" href="#">
+<span class="material-icons mr-3">shield</span>
+              用户权限
+            </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 bg-blue-600 text-white rounded-md" href="#">
+<span class="material-icons mr-3">map</span>
+              设备地图
+            </a>
+</li>
+</ul>
+</nav>
+</aside>
+<div class="flex-1 flex flex-col">
+<header class="bg-white shadow-sm p-4 flex justify-between items-center">
+<div class="flex items-center">
+<button class="text-gray-600 focus:outline-none lg:hidden">
+<span class="material-icons">menu</span>
+</button>
+<h2 class="text-lg font-semibold text-gray-700 ml-2">设备地图</h2>
+</div>
+<div class="flex items-center">
+<span class="text-sm text-gray-600 mr-2">中航锂电(广东) 科技有限公司</span>
+<span class="material-icons text-gray-400">expand_more</span>
+</div>
+</header>
+<main class="flex-1 p-4 flex">
+<div class="flex-grow bg-white rounded-lg shadow mr-4">
+<img alt="Map placeholder with various locations in Asia" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZ_ViNFoCBPoPDo84A57QWfRqdcDqv0z1vgRwUYaApi0lSI1LQWjDj7HbaWXe2sS5wyiQlUt7K1W266f5pVbUQ5pc4pimJKF_Eb1099q3BSnWxKWtzWNKGB3qmlk4a39QzR5Ct50n9hy_0WXN5lFOSTjkH_WaS3C7r9udp6svLqGB8zMlJai6qlo2RU_oBhSM87F7IYj9YBZKnaui3UQZSBToErSBeWcg8kd8-MVgV9yKvaVrwscDPS1OV1M8BlIQj64px9IyDRc"/>
+</div>
+<div class="w-96 bg-white rounded-lg shadow p-6 space-y-6">
+<div>
+<label class="sr-only" for="searchInput">搜索设备</label>
+<div class="relative">
+<input class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="searchInput" placeholder="输入设备MAC或序列号" type="text"/>
+<span class="material-icons absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">search</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-md space-y-2">
+<div class="flex justify-between items-center text-sm text-gray-700">
+<span>定位设备数:</span>
+<span class="font-semibold">0</span>
+</div>
+<div class="flex justify-between items-center text-sm text-gray-700">
+<span>在线设备:</span>
+<span class="font-semibold">0</span>
+</div>
+<div class="flex justify-between items-center text-sm text-gray-700">
+<span>离线设备:</span>
+<span class="font-semibold">0</span>
+</div>
+</div>
+<div class="text-center text-gray-500 pt-8">
+<span class="material-icons text-5xl mb-2">devices_other</span>
+<p>暂无设备信息</p>
+<p class="text-sm">请在左侧地图中选择设备或搜索设备</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById(id + 'Icon');
+      dropdown.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+  </script>
+
+</body></html>

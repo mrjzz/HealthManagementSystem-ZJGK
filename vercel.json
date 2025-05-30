@@ -8,12 +8,52 @@
   ],
   "routes": [
     {
-      "src": "/user-management",
+      "src": "/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/user-manage",
       "dest": "/stitch-usrManagement.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/device-manage",
+      "dest": "/stitch-deviceManagement.html"
+    },
+    {
+      "src": "/roles-manage",
+      "dest": "/stitch-rolesManagement.html"
+    },
+    {
+      "src": "/roles-perm-manage",
+      "dest": "/stitch-rolesPermManagement.html"
+    },
+    {
+      "src": "/logger",
+      "dest": "/stitch-logger.html"
+    },
+    {
+      "src": "/settings",
+      "dest": "/stitch-settings.html"
+    },
+    {
+      "src": "/alarm-manage",
+      "dest": "/stitch-alarmManagement.html"
+    },
+    {
+      "src": "/knowledge-base",
+      "dest": "/stitch-knowledgeBase.html"
+    },
+    {
+      "src": "/classify-manage",
+      "dest": "/stitch-classifyManagement.html"
+    },
+    {
+      "src": "/device-manage",
+      "dest": "/stitch-deviceManagement.html"
+    },
+    {
+      "src": "/device-map",
+      "dest": "/stitch-deviceMap.html"
     }
   ]
 } 
