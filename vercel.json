@@ -40,8 +40,8 @@
       "dest": "/stitch-classifyManagement.html"
     },
     {
-      "src": "/device-manage",
-      "dest": "/stitch-deviceManagement.html"
+      "src": "/feedback",
+      "dest": "/stitch-userfeedback.html"
     },
     {
       "src": "/device-map",
