@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>健康管理后台</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #2d3748;}
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      color: #e2e8f0;transition: background-color 0.2s;
+    }
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      background-color: #4a5568;color: #ffffff;
+    }
+    .sidebar-link .material-icons-sharp {
+      margin-right: 0.75rem;
+    }
+    .content {
+      flex: 1;
+      background-color: #f7fafc;}
+    .form-section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      font-weight: 600;
+      color: #4a5568;}
+    .form-input,
+    .form-select {
+      border-radius: 0.375rem;
+      border: 1px solid #e2e8f0;padding: 0.5rem 0.75rem;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #4299e1;box-shadow: 0 0 0 1px #4299e1;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 0.25rem;
+    }
+    .radio-group label {
+      margin-right: 1rem;
+      color: #4a5568;}
+    .checkbox-group label {
+      margin-right: 1rem;
+      color: #4a5568;}
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 0.25rem;
+      border-radius: 0.25rem;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    .btn-primary {
+      background-color: #4299e1;color: white;
+    }
+    .btn-primary:hover {
+      background-color: #3182ce;}
+    .btn-secondary {
+      background-color: #e2e8f0;color: #2d3748;}
+    .btn-secondary:hover {
+      background-color: #cbd5e0;}
+    .table-cell {
+      padding: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;vertical-align: top;
+    }
+    .table-cell:first-child {
+      font-weight: 600;
+      color: #4a5568;width: 120px;
+    }
+  </style>
+</head>
+<body class="flex h-screen bg-gray-100">
+<aside class="sidebar flex flex-col text-white">
+<div class="p-6 text-xl font-semibold">健康管理平台</div>
+<nav class="flex-1">
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">home</span>
+        首页
+      </a>
+<a class="sidebar-link active" href="#">
+<span class="material-icons-sharp">group</span>
+        用户管理
+      </a>
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">description</span>
+        资料管理
+      </a>
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">settings</span>
+        系统管理
+      </a>
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">notifications</span>
+        通知公告
+      </a>
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">person_add</span>
+        签约体检
+      </a>
+<a class="sidebar-link" href="#">
+<span class="material-icons-sharp">vaccines</span>
+        慢病管理
+      </a>
+</nav>
+</aside>
+<main class="content flex flex-col">
+<header class="bg-white shadow-sm p-4 flex justify-between items-center">
+<div class="text-gray-600">用户管理 / 添加用户</div>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">当前用户：广州市越秀区科技公司...</span>
+<button class="btn btn-secondary text-sm">切换</button>
+</div>
+</header>
+<div class="p-6 flex-1 overflow-y-auto">
+<section class="form-section">
+<h2 class="text-lg font-semibold mb-4 text-gray-700 border-l-4 border-blue-500 pl-2">基本信息</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="form-label block mb-1" for="name">姓名<span class="text-red-500">*</span>:</label>
+<input class="form-input" id="name" type="text"/>
+</div>
+<div class="flex items-center mt-6">
+<span class="form-label mr-4">性别:</span>
+<div class="radio-group">
+<input checked="" id="male" name="gender" type="radio" value="male"/>
+<label for="male">男</label>
+<input id="female" name="gender" type="radio" value="female"/>
+<label for="female">女</label>
+</div>
+</div>
+<div>
+<label class="form-label block mb-1" for="birthdate">生日:</label>
+<input class="form-input" id="birthdate" type="date"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="idCard">身份证号<span class="text-red-500">*</span>:</label>
+<input class="form-input" id="idCard" type="text"/>
+</div>
+</div>
+</section>
+<section class="form-section">
+<h2 class="text-lg font-semibold mb-4 text-gray-700 border-l-4 border-blue-500 pl-2">公司信息</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="form-label block mb-1" for="companyName">就职单位:</label>
+<input class="form-input" id="companyName" type="text"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="employeeId">身份证号:</label>
+<input class="form-input" id="employeeId" type="text"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="department">所属部门:</label>
+<input class="form-input" id="department" type="text"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="company">所属企业<span class="text-red-500">*</span>:</label>
+<select class="form-select" id="company">
+<option value="">分院</option>
+</select>
+</div>
+</div>
+</section>
+<section class="form-section">
+<h2 class="text-lg font-semibold mb-4 text-gray-700 border-l-4 border-blue-500 pl-2">健康档案</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+<div>
+<label class="form-label block mb-1" for="weight">体重(kg):</label>
+<input class="form-input" id="weight" type="number"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="height">身高(cm):</label>
+<input class="form-input" id="height" type="number"/>
+</div>
+<div>
+<label class="form-label block mb-1" for="waist">腰围(cm):</label>
+<input class="form-input" id="waist" type="number"/>
+</div>
+</div>
+<table class="w-full text-sm">
+<tbody>
+<tr>
+<td class="table-cell">血型:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="bloodTypeNone" name="bloodType" type="radio" value="none"/> <label for="bloodTypeNone">不清楚</label>
+<input id="bloodTypeA" name="bloodType" type="radio" value="A"/> <label for="bloodTypeA">A</label>
+<input id="bloodTypeB" name="bloodType" type="radio" value="B"/> <label for="bloodTypeB">B</label>
+<input id="bloodTypeAB" name="bloodType" type="radio" value="AB"/> <label for="bloodTypeAB">AB</label>
+<input id="bloodTypeO" name="bloodType" type="radio" value="O"/> <label for="bloodTypeO">O</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">主要慢性疾病史:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="diseaseNone" name="chronicDisease" type="checkbox" value="none"/> <label for="diseaseNone">无</label>
+<input id="hypertension" name="chronicDisease" type="checkbox" value="高血压"/> <label for="hypertension">高血压</label>
+<input id="diabetes" name="chronicDisease" type="checkbox" value="糖尿病"/> <label for="diabetes">糖尿病</label>
+<input id="coronaryHeartDisease" name="chronicDisease" type="checkbox" value="冠心病"/> <label for="coronaryHeartDisease">冠心病</label>
+<input id="stroke" name="chronicDisease" type="checkbox" value="脑卒中"/> <label for="stroke">脑卒中</label>
+<input id="copd" name="chronicDisease" type="checkbox" value="慢阻肺"/> <label for="copd">慢阻肺</label>
+<input id="severeMentalDisorder" name="chronicDisease" type="checkbox" value="严重精神障碍"/> <label for="severeMentalDisorder">严重精神障碍</label>
+<input id="tuberculosis" name="chronicDisease" type="checkbox" value="肺结核"/> <label for="tuberculosis">肺结核</label>
+<input id="hepatitis" name="chronicDisease" type="checkbox" value="肝炎"/> <label for="hepatitis">肝炎</label>
+<input id="otherNotifiable" name="chronicDisease" type="checkbox" value="其他法定传染病"/> <label for="otherNotifiable">其他法定传染病</label>
+<input id="cancer" name="chronicDisease" type="checkbox" value="癌症"/> <label for="cancer">癌症</label>
+<input id="occupationalDisease" name="chronicDisease" type="checkbox" value="职业病"/> <label for="occupationalDisease">职业病</label>
+<input id="other" name="chronicDisease" type="checkbox" value="其他"/> <label for="other">其他</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">既往住院史:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="hospitalizationNone" name="hospitalization" type="checkbox" value="none"/> <label for="hospitalizationNone">无</label>
+<input id="hypertensionH" name="hospitalization" type="checkbox" value="高血压"/> <label for="hypertensionH">高血压</label>
+<input id="diabetesH" name="hospitalization" type="checkbox" value="糖尿病"/> <label for="diabetesH">糖尿病</label>
+<input id="coronaryHeartDiseaseH" name="hospitalization" type="checkbox" value="冠心病"/> <label for="coronaryHeartDiseaseH">冠心病</label>
+<input id="strokeH" name="hospitalization" type="checkbox" value="脑卒中"/> <label for="strokeH">脑卒中</label>
+<input id="copdH" name="hospitalization" type="checkbox" value="慢阻肺"/> <label for="copdH">慢阻肺</label>
+<input id="severeMentalDisorderH" name="hospitalization" type="checkbox" value="严重精神障碍"/> <label for="severeMentalDisorderH">严重精神障碍</label>
+<input id="tuberculosisH" name="hospitalization" type="checkbox" value="肺结核"/> <label for="tuberculosisH">肺结核</label>
+<input id="hepatitisH" name="hospitalization" type="checkbox" value="肝炎"/> <label for="hepatitisH">肝炎</label>
+<input id="otherNotifiableH" name="hospitalization" type="checkbox" value="其他法定传染病"/> <label for="otherNotifiableH">其他法定传染病</label>
+<input id="cancerH" name="hospitalization" type="checkbox" value="癌症"/> <label for="cancerH">癌症</label>
+<input id="occupationalDiseaseH" name="hospitalization" type="checkbox" value="职业病"/> <label for="occupationalDiseaseH">职业病</label>
+<input id="otherH" name="hospitalization" type="checkbox" value="其他"/> <label for="otherH">其他</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">家族病史:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="familyHistoryNone" name="familyHistory" type="checkbox" value="none"/> <label for="familyHistoryNone">无</label>
+<input id="hypertensionF" name="familyHistory" type="checkbox" value="高血压"/> <label for="hypertensionF">高血压</label>
+<input id="diabetesF" name="familyHistory" type="checkbox" value="糖尿病"/> <label for="diabetesF">糖尿病</label>
+<input id="coronaryHeartDiseaseF" name="familyHistory" type="checkbox" value="冠心病"/> <label for="coronaryHeartDiseaseF">冠心病</label>
+<input id="strokeF" name="familyHistory" type="checkbox" value="脑卒中"/> <label for="strokeF">脑卒中</label>
+<input id="copdF" name="familyHistory" type="checkbox" value="慢阻肺"/> <label for="copdF">慢阻肺</label>
+<input id="severeMentalDisorderF" name="familyHistory" type="checkbox" value="严重精神障碍"/> <label for="severeMentalDisorderF">严重精神障碍</label>
+<input id="tuberculosisF" name="familyHistory" type="checkbox" value="肺结核"/> <label for="tuberculosisF">肺结核</label>
+<input id="hepatitisF" name="familyHistory" type="checkbox" value="肝炎"/> <label for="hepatitisF">肝炎</label>
+<input id="otherNotifiableF" name="familyHistory" type="checkbox" value="其他法定传染病"/> <label for="otherNotifiableF">其他法定传染病</label>
+<input id="cancerF" name="familyHistory" type="checkbox" value="癌症"/> <label for="cancerF">癌症</label>
+<input id="occupationalDiseaseF" name="familyHistory" type="checkbox" value="职业病"/> <label for="occupationalDiseaseF">职业病</label>
+<input id="otherF" name="familyHistory" type="checkbox" value="其他"/> <label for="otherF">其他</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">药物过敏史:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="allergyNone" name="drugAllergy" type="checkbox" value="none"/> <label for="allergyNone">无</label>
+<input id="penicillin" name="drugAllergy" type="checkbox" value="青霉素"/> <label for="penicillin">青霉素</label>
+<input id="sulfonamides" name="drugAllergy" type="checkbox" value="磺胺类"/> <label for="sulfonamides">磺胺类</label>
+<input id="streptomycin" name="drugAllergy" type="checkbox" value="链霉素"/> <label for="streptomycin">链霉素</label>
+<input id="othersAllergy" name="drugAllergy" type="checkbox" value="其他"/> <label for="othersAllergy">其他</label>
+<input id="vasodilators" name="drugAllergy" type="checkbox" value="血管扩张药"/> <label for="vasodilators">血管扩张药</label>
+<input id="hormones" name="drugAllergy" type="checkbox" value="激素类"/> <label for="hormones">激素类</label>
+<input id="analgesics" name="drugAllergy" type="checkbox" value="解热镇痛药"/> <label for="analgesics">解热镇痛药</label>
+<input id="anesthetics" name="drugAllergy" type="checkbox" value="麻醉药"/> <label for="anesthetics">麻醉药</label>
+<input id="mentalDrugs" name="drugAllergy" type="checkbox" value="精神科药物"/> <label for="mentalDrugs">精神科药物</label>
+<input id="neurologicalDrugs" name="drugAllergy" type="checkbox" value="神经科药物"/> <label for="neurologicalDrugs">神经科药物</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">食物过敏:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="foodAllergyNone" name="foodAllergy" type="checkbox" value="none"/> <label for="foodAllergyNone">无</label>
+<input id="milk" name="foodAllergy" type="checkbox" value="牛奶"/> <label for="milk">牛奶</label>
+<input id="eggs" name="foodAllergy" type="checkbox" value="鸡蛋"/> <label for="eggs">鸡蛋</label>
+<input id="fishShrimp" name="foodAllergy" type="checkbox" value="鱼虾"/> <label for="fishShrimp">鱼虾</label>
+<input id="nuts" name="foodAllergy" type="checkbox" value="坚果"/> <label for="nuts">坚果</label>
+<input id="mango" name="foodAllergy" type="checkbox" value="芒果"/> <label for="mango">芒果</label>
+<input id="gluten" name="foodAllergy" type="checkbox" value="麸质"/> <label for="gluten">麸质</label>
+<input id="soy" name="foodAllergy" type="checkbox" value="大豆制品"/> <label for="soy">大豆制品</label>
+<input id="foodAdditives" name="foodAllergy" type="checkbox" value="食物添加剂"/> <label for="foodAdditives">食物添加剂</label>
+</td>
+</tr>
+<tr>
+<td class="table-cell">个人习惯:</td>
+<td class="table-cell checkbox-group">
+<input checked="" id="habitNone" name="personalHabit" type="checkbox" value="none"/> <label for="habitNone">无</label>
+<input id="smoking" name="personalHabit" type="checkbox" value="吸烟"/> <label for="smoking">吸烟</label>
+<input id="drinking" name="personalHabit" type="checkbox" value="饮酒"/> <label for="drinking">饮酒</label>
+<input id="betelNut" name="personalHabit" type="checkbox" value="嚼槟榔"/> <label for="betelNut">嚼槟榔</label>
+<input id="tea" name="personalHabit" type="checkbox" value="饮茶"/> <label for="tea">饮茶</label>
+<input id="coffee" name="personalHabit" type="checkbox" value="饮咖啡"/> <label for="coffee">饮咖啡</label>
+<input id="lackExercise" name="personalHabit" type="checkbox" value="缺乏锻炼"/> <label for="lackExercise">缺乏锻炼</label>
+<input id="irregularDiet" name="personalHabit" type="checkbox" value="饮食不规律"/> <label for="irregularDiet">饮食不规律</label>
+<input id="stayUpLate" name="personalHabit" type="checkbox" value="熬夜"/> <label for="stayUpLate">熬夜</label>
+<input id="eatTooMuch" name="personalHabit" type="checkbox" value="饮食过量"/> <label for="eatTooMuch">饮食过量</label>
+<input id="eatTooSalty" name="personalHabit" type="checkbox" value="饮食过咸"/> <label for="eatTooSalty">饮食过咸</label>
+<input id="eatTooOily" name="personalHabit" type="checkbox" value="饮食过油"/> <label for="eatTooOily">饮食过油</label>
+<input id="eatTooSweet" name="personalHabit" type="checkbox" value="饮食过甜"/> <label for="eatTooSweet">饮食过甜</label>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="mt-8 flex justify-end space-x-3">
+<button class="btn btn-secondary" type="button">取消</button>
+<button class="btn btn-primary" type="submit">保存</button>
+</div>
+</div>
+</main>
+
+</body></html>

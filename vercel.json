@@ -48,6 +48,18 @@
       "dest": "/stitch-deviceMap.html"
     },
     {
+      "src": "/add-user",
+      "dest": "/stitch-addUsr.html"
+    },
+    {
+      "src": "/check-enp",
+      "dest": "/stitch-classifyManagerment-checkEnp.html"
+    },
+    {
+      "src": "/edit-enp",
+      "dest": "/stitch-classifyManagerment-editEnp.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
