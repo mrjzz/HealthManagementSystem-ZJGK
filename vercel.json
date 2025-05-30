@@ -8,10 +8,6 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    },
-    {
       "src": "/user-manage",
       "dest": "/stitch-usrManagement.html"
     },
@@ -54,6 +50,10 @@
     {
       "src": "/device-map",
       "dest": "/stitch-deviceMap.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 } 
