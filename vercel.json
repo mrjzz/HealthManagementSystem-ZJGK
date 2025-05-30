@@ -28,16 +28,12 @@
       "dest": "/stitch-logger.html"
     },
     {
-      "src": "/settings",
-      "dest": "/stitch-settings.html"
-    },
-    {
       "src": "/alarm-manage",
       "dest": "/stitch-alarmManagement.html"
     },
     {
       "src": "/knowledge-base",
-      "dest": "/stitch-knowledgeBase.html"
+      "dest": "/stitch-knowledgebase.html"
     },
     {
       "src": "/classify-manage",
